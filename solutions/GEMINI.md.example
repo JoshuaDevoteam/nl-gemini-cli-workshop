@@ -1,0 +1,46 @@
+# Gemini CLI Mario Platformer
+
+## Project Overview
+A browser-based 2D Mario-style platformer game built as a tutorial for learning Gemini CLI. Single HTML file with embedded CSS and JavaScript using HTML5 Canvas. No external dependencies or build tools.
+
+## Tech Stack
+- Pure HTML5, CSS3, JavaScript (no frameworks or build tools)
+- HTML5 Canvas API for rendering
+- Single file: index.html (all code in one file)
+
+## Architecture
+- Canvas: 800x500 pixels
+- Game loop using requestAnimationFrame
+- Collision detection: AABB (Axis-Aligned Bounding Box) via checkCollision()
+- Code organized in sections with comment headers: // ======== SECTION ========
+- Game objects are plain JavaScript objects (not classes)
+
+## Key Objects
+- `player` - x, y, width (32), height (32), velX, velY, speed, jumping, grounded
+- `platforms` - array of {x, y, width, height, color} objects
+- `keys` - object tracking pressed keys (ArrowLeft, ArrowRight, Space, ArrowUp)
+- `clouds` - decorative background elements
+
+## Coding Style
+- Use `const` for constants and objects, `let` for variables that change
+- All game objects are plain objects (not classes)
+- Colors as hex strings (e.g., '#e94560')
+- Keep everything in a single index.html file
+- Use descriptive section comments
+
+## Canvas Coordinates
+- Origin (0,0) is top-left corner
+- X increases to the right (0 to 800)
+- Y increases downward (0 to 500)
+- Ground platform is at y=460
+
+## Current State
+- Player can jump (Space / ArrowUp) - WORKING
+- Left/right movement - NOT YET IMPLEMENTED
+- No collectibles, enemies, or score system yet
+- player.velX, player.speed, FRICTION exist but are unused (intentional hooks)
+
+## Important Notes
+- The game must work by simply opening index.html in a browser (no server needed)
+- Do not add external dependencies or separate JS/CSS files
+- When adding features, follow the existing section comment pattern
